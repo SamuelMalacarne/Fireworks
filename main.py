@@ -73,12 +73,12 @@ while True:
             sys.exit()
 
         if event.type == SCREEN_UPDATE:
-            fireworks.append(Firework(Vector2(randint(0, WIDTH), HEIGHT), (HEIGHT-100), 100))
+            fireworks.append(Firework(Vector2(randint(0, WIDTH), HEIGHT), (HEIGHT-300), 100))
             launch_sound.play()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                fireworks.append(Firework(Vector2(randint(0, WIDTH), HEIGHT), (HEIGHT-100), 100))
+                fireworks.append(Firework(Vector2(randint(0, WIDTH), HEIGHT), (HEIGHT-300), 100))
                 launch_sound.play()
 
     screen.fill((25, 25, 25))
