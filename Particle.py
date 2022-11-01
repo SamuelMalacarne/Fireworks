@@ -8,23 +8,19 @@ class Particle():
         self.size = size
         self.pos = init_pos
         self.velocity = velocity
-        self.acceleration = Vector2(0, 500)
         self.age = age
         self.direction = direction
 
+    #updates the position of the particle and the age
     def update(self, dt):
-        # # self.direction.x += self.acceleration.x * dt
-        # if self.direction.y < 0:
-        #     self.direction.y += self.acceleration.y * dt
-        # # else:
-        # #     self.direction.y -= self.acceleration.y * dt
-
         self.pos.x += self.velocity * (self.direction.x / 100) * dt
         self.pos.y += self.velocity * (self.direction.y / 100) * dt
         self.age += dt
 
+    # draws the particle onto the canvas
     def render(self, surf):
         pygame.draw.circle(surf, self.color, self.pos, self.size)
 
+    # checks if the particle reached its lifetime
     def dead(self):
         return self.age >= self.life_time
